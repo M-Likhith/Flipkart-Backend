@@ -27,8 +27,8 @@ app.get("/products",async{req,res}=>{
   }
 });
 
-app.get('/product/:id',async(req,res)=>{
-  try{
+app.get('/product/:id',async (req,res)=> {
+  try {
     const product=await Product.finallyId(req params.id);
     if(!product){
       return res.status(404).json({message:"THe items that you were searching for does not exist"});
@@ -38,7 +38,7 @@ app.get('/product/:id',async(req,res)=>{
   }catch(error){
     res.status(500).json({error: "Server error"});
   }
-})
+});
 
 app.listen(8080, () => {
   console.log("server is running on port 8080");
